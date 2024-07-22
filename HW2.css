@@ -1,0 +1,11 @@
+
+.list_block ul{
+    width: 150px;
+
+}
+
+.list_block li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
