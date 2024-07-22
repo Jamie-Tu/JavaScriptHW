@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="HW2.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>ToDoList</h1>
+        <div class="input_block">
+            <input type="text" class="todo_add">
+            <button class="btn_add">
+                Add
+            </button>
+        </div>
+        
+        <div class="list_block">
+            <ul >
+                <li>
+                    <p>Default</p> 
+                    <button class="btn_del">
+                        Delete
+                     </button>
+                </li>
+                
+            </ul>
+        </div> 
+
+    </div>
+
+    <script>
+        
+        //事件click_新增清單項目
+        let btn_add=document.querySelector(".btn_add");
+        btn_add.addEventListener("click",add); 
+
+        //事件click_刪除清單項目
+        document.querySelector('ul').addEventListener('click', function (event) {
+        let target = event.target;
+      
+        if (target.classList.contains('btn_del')) {
+            target.parentNode.remove()
+        }
+        });
+
+
+        //FN_新增清單項目
+        function add(){
+            let todo_add=document.querySelector(".todo_add");
+            let todo_item=todo_add.value;
+            let li=document.createElement("li");
+            li.innerHTML=`
+            <p>${todo_item}</p>
+            <button class="btn_del">
+                Delete
+            </button>
+            `
+            todo_item;
+            let ul=document.querySelector("ul");
+            if(todo_item==""){
+                return;
+            }
+            else{
+                ul.append(li);
+            }
+            
+        }
+
+
+
+        FN_刪除清單項目
+        function del(){
+            let btn_del=document.querySelectorAll(".btn_del")
+            btn_del.parentNode.remove();
+        }
+    </script>
+
+
+</body>
+</html>
